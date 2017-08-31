@@ -1,0 +1,45 @@
+﻿<Window x:Name="Window" x:Class="FileBackupHelper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FileBackupHelper"
+        mc:Ignorable="d"
+        Title="FileBackupHelper" Height="220" Width="500" WindowStyle="ToolWindow">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TabControl>
+            <TabItem Header="备份">
+                <Grid Background="#FFE5E5E5">
+                    <TextBlock x:Name="BackupStateTitle" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="未在备份" VerticalAlignment="Top"/>
+                    <ProgressBar x:Name="ProgressBar" VerticalAlignment="Top" Height="20" Margin="10,30,10,0"/>
+                    <Expander x:Name="MoreInfoButton" Header="详情" Margin="10,60,10.333,5" Collapsed="MoreInfoButton_Collapsed" Expanded="MoreInfoButton_Expanded" VerticalContentAlignment="Top" IsExpanded="True">
+                        <TextBlock x:Name="BackupStatesBox" Margin="10,5,10,0" TextWrapping="Wrap" Text="没有信息" Height="45"/>
+                    </Expander>
+                    <Button x:Name="StartButton" Content="开始" HorizontalAlignment="Right" Margin="0,62,10,0" Width="70" Height="20" VerticalAlignment="Top" Click="StartButton_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="备份文件设置">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox x:Name="BackupList" Margin="10,5,10.333,38"/>
+                    <TextBox x:Name="AddItemText" Height="23" Margin="10,0,94.333,10" TextWrapping="Wrap" VerticalAlignment="Bottom" Text="d:\hexo"/>
+                    <Button x:Name="AddButton" Content="添加" HorizontalAlignment="Right" Height="23" Margin="0,0,50.333,10" VerticalAlignment="Bottom" Width="40" Click="AddButton_Click"/>
+                    <Button x:Name="DelButton" Content="删除" HorizontalAlignment="Right" Height="23" Margin="0,0,10.333,10" VerticalAlignment="Bottom" Width="40" Click="DelButton_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="目的目录及自动化">
+                <Grid>
+                    <Label Content="备份到此" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center" Height="25"/>
+                    <TextBox x:Name="FinalDirectory" Height="20" Margin="70,14,113.333,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="e:\backup"/>
+                    <CheckBox x:Name="AutoBackupChecker" Content="自动备份" HorizontalAlignment="Right" Margin="0,16,20.333,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
