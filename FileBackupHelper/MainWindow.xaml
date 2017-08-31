@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FileBackupHelper"
         mc:Ignorable="d"
-        Title="FileBackupHelper" Height="220" Width="500" WindowStyle="ToolWindow">
+        Title="FileBackupHelper" Height="220" Width="500" WindowStyle="ToolWindow" Closing="Window_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -27,7 +27,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <ListBox x:Name="BackupList" Margin="10,5,10.333,38"/>
-                    <TextBox x:Name="AddItemText" Height="23" Margin="10,0,94.333,10" TextWrapping="Wrap" VerticalAlignment="Bottom" Text="d:\hexo"/>
+                    <TextBox x:Name="AddItemText" Height="23" Margin="10,0,94.333,10" TextWrapping="Wrap" VerticalAlignment="Bottom"/>
                     <Button x:Name="AddButton" Content="添加" HorizontalAlignment="Right" Height="23" Margin="0,0,50.333,10" VerticalAlignment="Bottom" Width="40" Click="AddButton_Click"/>
                     <Button x:Name="DelButton" Content="删除" HorizontalAlignment="Right" Height="23" Margin="0,0,10.333,10" VerticalAlignment="Bottom" Width="40" Click="DelButton_Click"/>
                 </Grid>
@@ -35,7 +35,7 @@
             <TabItem Header="目的目录及自动化">
                 <Grid>
                     <Label Content="备份到此" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="60" HorizontalContentAlignment="Center" Height="25"/>
-                    <TextBox x:Name="FinalDirectory" Height="20" Margin="70,14,113.333,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="e:\backup"/>
+                    <TextBox x:Name="FinalDirectory" Height="20" Margin="70,14,113.333,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
                     <CheckBox x:Name="AutoBackupChecker" Content="自动备份" HorizontalAlignment="Right" Margin="0,16,20.333,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>

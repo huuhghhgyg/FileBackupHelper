@@ -275,5 +275,10 @@ namespace FileBackupHelper
                 + "\n已备份文件个数:" + CopiedFileNumber.ToString() + "/" + FileNumber.ToString()
                 + "\n备份失败文件个数:" + FailedNumber.ToString();
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
